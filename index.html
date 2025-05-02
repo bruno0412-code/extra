@@ -3,10 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Minhas Informações</title>
-
-<!-- Font Awesome (ícones bonitos) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <style>
   * {
     margin: 0;
@@ -16,90 +12,49 @@
 
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0; /* Fundo cinza claro */
+    background-color: #f4f4f9;
     color: #333;
     padding: 20px;
     line-height: 1.6;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-
-  body.loaded {
-    opacity: 1;
   }
 
   h1 {
     text-align: center;
     margin-bottom: 40px;
-    color: #333; /* Cor de texto mais escura */
+    color: #4CAF50;
   }
 
   .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff; /* Fundo branco para o conteúdo */
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
   }
 
-  /* === EFEITO DE FADE-IN NA IMAGEM === */
-  img {
-    opacity: 0;
-    transform: scale(1.05); /* A imagem começa um pouco maior */
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-
-  img.loaded {
-    opacity: 1;
-    transform: scale(1); /* A imagem vai diminuir ao tamanho original */
-  }
-
-  /* === ESTILO DOS BOTÕES (CINZA MODERNO) === */
   button {
     width: 100%;
     padding: 15px;
-    background-color: #666; /* Cor cinza escuro */
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 18px;
     cursor: pointer;
     margin-bottom: 20px;
-    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
-    text-align: left;
-  }
-
-  button i {
-    margin-right: 10px;
+    transition: background-color 0.3s;
   }
 
   button:hover {
-    background-color: #555; /* Cor cinza ainda mais escuro no hover */
-    animation: bounce 0.5s ease-out;
-    transform: scale(1.05); /* Efeito de crescimento */
-    border: 2px solid #555; /* Borda cinza escuro ao passar o mouse */
-  }
-
-  /* === EFEITO DE "BOUNCING" NOS BOTÕES === */
-  @keyframes bounce {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
+    background-color: #45a049;
   }
 
   .info {
     display: none;
     margin-top: 20px;
     padding: 15px;
-    background-color: #e1e1e1; /* Fundo cinza claro para as informações */
+    background-color: #f1f1f1;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
@@ -110,29 +65,28 @@
   .info.show {
     display: block;
     opacity: 1;
-    animation: slideUp 0.5s ease-out;
   }
 
-  @keyframes slideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Adicionar uma seção para o botão "Ferramentas" */
+  .ferramentas-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    text-align: center;
   }
 
-  @media screen and (max-width: 600px) {
-    .container {
-      padding: 10px;
-    }
-    button {
-      font-size: 16px;
-      padding: 10px;
-    }
+  .ferramentas-btn:hover {
+    background-color: #45a049;
   }
+
+  /* Restante do código */
 </style>
 </head>
 <body>
@@ -140,21 +94,20 @@
 <div class="container">
   <h1>Minhas Informações</h1>
 
-  <!-- FOTO -->
-  <img src="sua-foto.jpg" alt="Minha Foto">
-
-  <!-- BOTÕES COM ÍCONES -->
-  <button onclick="toggleInfo('idade')"><i class="fas fa-birthday-cake"></i> Minha Idade</button>
+  <button onclick="toggleInfo('idade')">Minha Idade</button>
   <div id="idade" class="info">Tenho 25 anos.</div>
 
-  <button onclick="toggleInfo('curso')"><i class="fas fa-book"></i> Meu Curso</button>
+  <button onclick="toggleInfo('curso')">Meu Curso</button>
   <div id="curso" class="info">Estou cursando Recursos Humanos.</div>
 
-  <button onclick="toggleInfo('objetivo')"><i class="fas fa-bullseye"></i> Meu Objetivo</button>
+  <button onclick="toggleInfo('objetivo')">Meu Objetivo</button>
   <div id="objetivo" class="info">Meu objetivo é atuar como analista de RH focando em recrutamento e seleção.</div>
 
-  <button onclick="toggleInfo('historia')"><i class="fas fa-user"></i> Minha História</button>
+  <button onclick="toggleInfo('historia')">Minha História</button>
   <div id="historia" class="info">Comecei a trabalhar na área administrativa e desenvolvi paixão por gestão de pessoas. Por isso, ingressei no curso de RH.</div>
+
+  <!-- Botão "Ferramentas" para a segunda página -->
+  <button class="ferramentas-btn" onclick="window.location.href='ferramentas.html'">Ferramentas</button>
 </div>
 
 <script>
@@ -163,7 +116,6 @@
     elem.classList.toggle('show');
   }
 
-  // Fade-in na imagem
   window.addEventListener('load', () => {
     document.querySelector('img').classList.add('loaded');
     document.body.classList.add('loaded');
@@ -172,3 +124,4 @@
 
 </body>
 </html>
+
