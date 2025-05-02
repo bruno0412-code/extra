@@ -14,92 +14,73 @@
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     color: #333;
-    height: 100vh;
     display: flex;
+    height: 100vh;
   }
 
   .sidebar {
     width: 40%;
-    background: url('imagens/minha-foto.jpg') no-repeat center center;
+    background: url('minha-foto.jpg') no-repeat center center;
     background-size: cover;
-    border-right: 5px solid #e0e0e0;
   }
 
   .content {
     width: 60%;
     padding: 40px;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   h1 {
     margin-bottom: 30px;
     color: #333;
-    text-align: center;
   }
 
   button {
     width: 100%;
     padding: 15px;
-    background-color: #666;
+    background-color: #333;
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 18px;
     cursor: pointer;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     transition: background-color 0.3s;
   }
 
   button:hover {
-    background-color: #4a4a4a;
+    background-color: #555;
   }
 
   .info {
     display: none;
-    margin-top: 10px;
+    margin-bottom: 30px;
     padding: 15px;
     background-color: #f1f1f1;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
   }
 
   .info.show {
     display: block;
-    opacity: 1;
   }
 
-  .tools-link {
+  a.ferramentas {
     margin-top: 40px;
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
     text-align: center;
   }
 
-  .tools-link a {
-    text-decoration: none;
-    color: white;
-    background-color: #666;
-    padding: 12px 25px;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-  }
-
-  .tools-link a:hover {
-    background-color: #4a4a4a;
-  }
-
-  @media screen and (max-width: 800px) {
-    body {
-      flex-direction: column;
-    }
-    .sidebar {
-      width: 100%;
-      height: 250px;
-    }
-    .content {
-      width: 100%;
-    }
+  a.ferramentas:hover {
+    background-color: #555;
   }
 </style>
 </head>
@@ -122,9 +103,7 @@
   <button onclick="toggleInfo('historia')">Minha História</button>
   <div id="historia" class="info">Comecei a trabalhar na área administrativa e desenvolvi paixão por gestão de pessoas. Por isso, ingressei no curso de RH.</div>
 
-  <div class="tools-link">
-    <a href="ferramentas.html">Ferramentas</a>
-  </div>
+  <a href="ferramentas.html" class="ferramentas">Ferramentas</a>
 </div>
 
 <script>
