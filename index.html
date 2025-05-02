@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Minhas Informações</title>
+
+<!-- Font Awesome (ícones bonitos) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
   * {
     margin: 0;
@@ -16,11 +20,17 @@
     color: #333;
     padding: 20px;
     line-height: 1.6;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  body.loaded {
+    opacity: 1;
   }
 
   h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: #4CAF50;
   }
 
@@ -31,15 +41,18 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
 
   img {
-    display: block;
-    margin: 0 auto 30px auto;
     width: 150px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  img:hover {
+    transform: scale(1.1);
   }
 
   button {
@@ -52,33 +65,33 @@
     font-size: 18px;
     cursor: pointer;
     margin-bottom: 20px;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s;
+    text-align: left;
+  }
+
+  button i {
+    margin-right: 10px;
   }
 
   button:hover {
     background-color: #45a049;
-    transform: scale(1.05);
   }
 
   .info {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    margin-bottom: 0;
-  }
-
-  .info.show {
-    max-height: 200px; /* ajusta conforme conteúdo */
-    opacity: 1;
-    transform: translateY(0);
-    margin-bottom: 20px;
+    display: none;
+    margin-top: 20px;
     padding: 15px;
     background-color: #f1f1f1;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .info.show {
+    display: block;
+    opacity: 1;
   }
 
   @media screen and (max-width: 600px) {
@@ -90,15 +103,6 @@
       padding: 10px;
     }
   }
- body {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-body.loaded {
-  opacity: 1;
-}
-
 </style>
 </head>
 <body>
@@ -106,33 +110,19 @@ body.loaded {
 <div class="container">
   <h1>Minhas Informações</h1>
 
-  <img src="minha-foto.jpg" alt="Minha Foto">
+  <!-- FOTO -->
+  <img src="sua-foto.jpg" alt="Minha Foto">
 
-  <button onclick="toggleInfo('idade')">Minha Idade</button>
+  <!-- BOTÕES COM ÍCONES -->
+  <button onclick="toggleInfo('idade')"><i class="fas fa-birthday-cake"></i> Minha Idade</button>
   <div id="idade" class="info">Tenho 25 anos.</div>
 
-  <button onclick="toggleInfo('curso')">Meu Curso</button>
+  <button onclick="toggleInfo('curso')"><i class="fas fa-book"></i> Meu Curso</button>
   <div id="curso" class="info">Estou cursando Recursos Humanos.</div>
 
-  <button onclick="toggleInfo('objetivo')">Meu Objetivo</button>
+  <button onclick="toggleInfo('objetivo')"><i class="fas fa-bullseye"></i> Meu Objetivo</button>
   <div id="objetivo" class="info">Meu objetivo é atuar como analista de RH focando em recrutamento e seleção.</div>
 
-  <button onclick="toggleInfo('historia')">Minha História</button>
-  <div id="historia" class="info">Comecei a trabalhar na área administrativa e desenvolvi paixão por gestão de pessoas. Por isso, ingressei no curso de RH.</div>
-</div>
-
-<script>
-  function toggleInfo(id) {
-    const elem = document.getElementById(id);
-    elem.classList.toggle('show');
-  }
-
- window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-
-</script>
-
-</body>
-</html>
+  <button onclick="toggleInfo('historia')"><i class="fas fa-user"></i> Minha História</button>
+  <div id="historia" class
 
