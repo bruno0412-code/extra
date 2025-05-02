@@ -2,88 +2,76 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Ferramentas que estou aprendendo</title>
+<title>Ferramentas que Estou Aprendendo</title>
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   body {
+    margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('imagens/fundo-ferramentas.jpg') no-repeat center center;
+    color: white;
+    height: 100vh;
+    background: url('fundo-ferramentas.jpg') no-repeat center center;
     background-size: cover;
-    color: #333;
-    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  h1 {
+  .box-container {
+    background-color: rgba(0,0,0,0.7);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
     text-align: center;
-    margin-bottom: 40px;
-    color: #333;
   }
 
-  .card {
+  .tool {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    margin: 20px 0;
     padding: 20px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    background-color: #f7f7f7;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
   }
 
-  .card:hover {
-    transform: translateY(-5px);
+  .tool h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
   }
 
-  .card h2 {
-    margin-bottom: 15px;
-    color: #222;
+  .tool p {
+    font-size: 16px;
+    color: #ddd;
   }
 
-  .voltar {
+  a.voltar {
+    margin-top: 20px;
     display: inline-block;
-    margin-top: 30px;
-    padding: 12px 24px;
-    background-color: #555;
-    color: #fff;
+    padding: 12px 20px;
+    background-color: #333;
+    color: white;
     border-radius: 8px;
     text-decoration: none;
-    transition: background-color 0.3s;
   }
 
-  .voltar:hover {
-    background-color: #333;
+  a.voltar:hover {
+    background-color: #555;
   }
-
 </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Ferramentas que estou aprendendo</h1>
+<div class="box-container">
+  <h1>Ferramentas que Estou Aprendendo</h1>
 
-  <div class="card">
+  <div class="tool">
     <h2>GitHub</h2>
-    <p>Estou me dedicando a aprender GitHub para versionamento de código e colaboração em projetos. Já entendo como criar repositórios, clonar projetos e fazer commits.</p>
+    <p>Estou me dedicando a aprender GitHub para versionar meus projetos e colaborar em equipe.</p>
   </div>
 
-  <div class="card">
+  <div class="tool">
     <h2>Python</h2>
-    <p>Tenho estudado Python para automatizar tarefas e desenvolver aplicações simples. Já estou confortável com a sintaxe, listas, funções e criação de pequenos scripts.</p>
+    <p>Estou estudando Python para ampliar minhas habilidades de automação e análise de dados.</p>
   </div>
 
-  <a class="voltar" href="index.html">← Voltar para a página inicial</a>
+  <a href="index.html" class="voltar">Voltar</a>
 </div>
 
 </body>
