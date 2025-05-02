@@ -65,7 +65,7 @@
     font-size: 18px;
     cursor: pointer;
     margin-bottom: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
     text-align: left;
   }
 
@@ -75,6 +75,8 @@
 
   button:hover {
     background-color: #45a049;
+    transform: scale(1.05); /* Efeito de crescimento */
+    border: 2px solid #4CAF50; /* Borda verde ao passar o mouse */
   }
 
   .info {
@@ -83,64 +85,3 @@
     padding: 15px;
     background-color: #f1f1f1;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .info.show {
-    display: block;
-    opacity: 1;
-  }
-
-  @media screen and (max-width: 600px) {
-    .container {
-      padding: 10px;
-    }
-    button {
-      font-size: 16px;
-      padding: 10px;
-    }
-  }
- /* === ANIMAÇÃO NOS TEXTOS === */
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.info.show {
-  display: block;
-  opacity: 1;
-  animation: slideUp 0.5s ease-out;
-}
-
-</style>
-</head>
-<body>
-
-<div class="container">
-  <h1>Minhas Informações</h1>
-
-  <!-- FOTO -->
-  <img src="sua-foto.jpg" alt="Minha Foto">
-
-  <!-- BOTÕES COM ÍCONES -->
-  <button onclick="toggleInfo('idade')"><i class="fas fa-birthday-cake"></i> Minha Idade</button>
-  <div id="idade" class="info">Tenho 25 anos.</div>
-
-  <button onclick="toggleInfo('curso')"><i class="fas fa-book"></i> Meu Curso</button>
-  <div id="curso" class="info">Estou cursando Recursos Humanos.</div>
-
-  <button onclick="toggleInfo('objetivo')"><i class="fas fa-bullseye"></i> Meu Objetivo</button>
-  <div id="objetivo" class="info">Meu objetivo é atuar como analista de RH focando em recrutamento e seleção.</div>
-
-  <button onclick="toggleInfo('historia')"><i class="fas fa-user"></i> Minha História</button>
-  <div id="historia" class
-
