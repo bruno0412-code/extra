@@ -90,6 +90,15 @@
       padding: 10px;
     }
   }
+ body {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
 </style>
 </head>
 <body>
@@ -117,6 +126,11 @@
     const elem = document.getElementById(id);
     elem.classList.toggle('show');
   }
+
+ window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
+
 </script>
 
 </body>
