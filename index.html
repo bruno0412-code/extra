@@ -164,4 +164,11 @@
   }
 
   // Fade-in na imagem
-  window.addEvent
+  window.addEventListener('load', () => {
+    document.querySelector('img').classList.add('loaded');
+    document.body.classList.add('loaded');
+  });
+</script>
+
+</body>
+</html>
