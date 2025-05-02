@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Minhas Informações</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+  }
+  button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  .info {
+    margin: 5px 0 20px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>Minhas Informações</h1>
+
+<button onclick="toggleInfo('idade')">Minha Idade</button>
+<div id="idade" class="info">tenho 20 anos.</div>
+
+<button onclick="toggleInfo('curso')">Meu Curso</button>
+<div id="curso" class="info">ciencia da computaçao.</div>
+
+<button onclick="toggleInfo('objetivo')">Meu Objetivo</button>
+<div id="objetivo" class="info">🎓 Estudante de Ciência da Computação (2º semestre | UNINTER) com interesse em atuar nas áreas de desenvolvimento de software, análise de dados e tecnologia da informação.
+
+💡 Atualmente desenvolvendo habilidades em Python, SQL, Git e lógica de programação, com foco em construir uma base sólida para projetos práticos e desafios do mercado de trabalho.
+
+🌍 Tenho grande interesse em oportunidades de estágio, tanto presenciais em São Paulo/SP quanto remotas ou internacionais, onde eu possa aprender e contribuir com soluções inovadoras.
+
+🚀 Características: Curiosidade, facilidade de aprendizado e vontade de colaborar com equipes multidisciplinares. Estou em constante busca por novos conhecimentos por meio de cursos, projetos e participação em comunidades de tecnologia.
+
+📩 Estou aberto a conexões, mentorias e projetos colaborativos. Vamos conversar?</div>
+
+<button onclick="toggleInfo('historia')">Minha História</button>
+<div id="historia" class="info">nenhuma</div>
+
+<script>
+  function toggleInfo(id) {
+    const elem = document.getElementById(id);
+    if (elem.style.display === "none" || elem.style.display === "") {
+      elem.style.display = "block";
+    } else {
+      elem.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
