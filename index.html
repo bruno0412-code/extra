@@ -4,65 +4,102 @@
 <meta charset="UTF-8">
 <title>Minhas Informações</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #4CAF50;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
   button {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    border: none;
+    width: 100%;
+    padding: 15px;
     background-color: #4CAF50;
     color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
     cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
   }
+
   button:hover {
     background-color: #45a049;
   }
+
   .info {
-    margin: 5px 0 20px 0;
-    padding: 10px;
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
     background-color: #f1f1f1;
     border-radius: 8px;
-    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .info.show {
+    display: block;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+    button {
+      font-size: 16px;
+      padding: 10px;
+    }
   }
 </style>
 </head>
 <body>
 
-<h1>Minhas Informações</h1>
+<div class="container">
+  <h1>Minhas Informações</h1>
 
-<button onclick="toggleInfo('idade')">Minha Idade</button>
-<div id="idade" class="info">tenho 20 anos.</div>
+  <button onclick="toggleInfo('idade')">Minha Idade</button>
+  <div id="idade" class="info">Tenho 25 anos.</div>
 
-<button onclick="toggleInfo('curso')">Meu Curso</button>
-<div id="curso" class="info">ciencia da computaçao.</div>
+  <button onclick="toggleInfo('curso')">Meu Curso</button>
+  <div id="curso" class="info">Estou cursando Recursos Humanos.</div>
 
-<button onclick="toggleInfo('objetivo')">Meu Objetivo</button>
-<div id="objetivo" class="info">🎓 Estudante de Ciência da Computação (2º semestre | UNINTER) com interesse em atuar nas áreas de desenvolvimento de software, análise de dados e tecnologia da informação.
+  <button onclick="toggleInfo('objetivo')">Meu Objetivo</button>
+  <div id="objetivo" class="info">Meu objetivo é atuar como analista de RH focando em recrutamento e seleção.</div>
 
-💡 Atualmente desenvolvendo habilidades em Python, SQL, Git e lógica de programação, com foco em construir uma base sólida para projetos práticos e desafios do mercado de trabalho.
-
-🌍 Tenho grande interesse em oportunidades de estágio, tanto presenciais em São Paulo/SP quanto remotas ou internacionais, onde eu possa aprender e contribuir com soluções inovadoras.
-
-🚀 Características: Curiosidade, facilidade de aprendizado e vontade de colaborar com equipes multidisciplinares. Estou em constante busca por novos conhecimentos por meio de cursos, projetos e participação em comunidades de tecnologia.
-
-📩 Estou aberto a conexões, mentorias e projetos colaborativos. Vamos conversar?</div>
-
-<button onclick="toggleInfo('historia')">Minha História</button>
-<div id="historia" class="info">nenhuma</div>
+  <button onclick="toggleInfo('historia')">Minha História</button>
+  <div id="historia" class="info">Comecei a trabalhar na área administrativa e desenvolvi paixão por gestão de pessoas. Por isso, ingressei no curso de RH.</div>
+</div>
 
 <script>
   function toggleInfo(id) {
     const elem = document.getElementById(id);
-    if (elem.style.display === "none" || elem.style.display === "") {
-      elem.style.display = "block";
-    } else {
-      elem.style.display = "none";
-    }
+    elem.classList.toggle('show');
   }
 </script>
 
